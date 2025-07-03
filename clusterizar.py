@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from sklearn.cluster import KMeans
 import pandas as pd
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/sugerir', methods=['POST'])
 def sugerir():
